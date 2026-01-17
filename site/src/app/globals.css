@@ -219,6 +219,34 @@ a:hover {
   gap: -20px;
 }
 
+.leaf-border-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  /* Constrain height to avoid blocking clicks below */
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.leaf-border-top .leaf-image {
+  /* Rotate -90deg to make the vertical vine horizontal */
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  margin: 0;
+  /* Remove vertical margins */
+  width: 40px;
+  /* Layout width - controls density/overlap */
+  height: auto;
+  /* Visual length will be determined by aspect ratio */
+}
+
 .leaf-border-left {
   left: -10px;
   transform: scaleX(-1);
@@ -261,10 +289,50 @@ a:hover {
   }
 }
 
-/* Mobile responsiveness - hide or shrink leaves on small screens */
+/* Mobile responsiveness - shrink leaves on small screens instead of hiding */
 @media (max-width: 768px) {
   .leaf-border {
-    display: none;
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  .leaf-image {
+    width: 25px;
+    height: auto;
+    /* Smaller for mobile */
+    margin: -15px 0;
+  }
+
+  .leaf-border-top .leaf-image {
+    width: 25px;
+    /* Tighter density on mobile */
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    margin: 0;
+  }
+
+  .leaf-border-top {
+    top: 5px;
+    /* Adjust top offset for mobile */
+    height: 40px;
+    flex-direction: row !important;
+    padding-top: 0;
+  }
+
+  .leaf-border-left {
+    left: -8px;
+  }
+
+  .leaf-border-right {
+    right: -8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .leaf-top {
+    width: 50px;
+    margin: 0 -20px;
+    transform: rotate(180deg);
   }
 }
 
