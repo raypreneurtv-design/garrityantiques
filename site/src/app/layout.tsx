@@ -28,7 +28,7 @@ export default function RootLayout({
         <GoldBorderFrame />
         <div className="page-container">
           <Navigation />
-          <main className="main-content animate-fade-in">
+          <main className="main-content welcome-animate">
             {children}
           </main>
         </div>
