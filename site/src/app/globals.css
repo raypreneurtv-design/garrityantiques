@@ -36,7 +36,10 @@ html {
 }
 
 body {
-  background: var(--color-forest-green);
+  background: radial-gradient(ellipse at center,
+      #0a1f0a 0%,
+      #1a3a1a 40%,
+      #0f250f 100%);
   color: var(--color-gold);
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.125rem;
@@ -185,27 +188,111 @@ a:hover {
   padding: 1rem;
 }
 
-/* Gold border frame that appears on all pages */
-.gold-border-frame {
+/* Leaf border decorations */
+.leaf-border {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  border: 2px solid var(--color-gold);
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 10;
+  overflow: hidden;
 }
 
-.gold-border-frame::before {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  right: 4px;
-  bottom: 4px;
-  border: 1px solid var(--color-gold);
-  opacity: 0.5;
+.leaf-border-left {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.leaf-border-right {
+  right: 0;
+}
+
+.leaf-image {
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3));
+  animation: leafSway 4s ease-in-out infinite, leafGlow 3s ease-in-out infinite;
+  object-fit: contain;
+  width: 70px;
+  height: auto;
+}
+
+.leaf-border-left .leaf-image:nth-child(odd) {
+  animation-delay: -1s;
+}
+
+.leaf-border-right .leaf-image:nth-child(even) {
+  animation-delay: -2s;
+}
+
+/* Leaf corner accents */
+.leaf-corner {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.leaf-corner-tl {
+  top: 10px;
+  left: 10px;
+  transform: rotate(-45deg);
+}
+
+.leaf-corner-tr {
+  top: 10px;
+  right: 10px;
+  transform: rotate(45deg) scaleX(-1);
+}
+
+.leaf-corner-bl {
+  bottom: 10px;
+  left: 10px;
+  transform: rotate(-135deg);
+}
+
+.leaf-corner-br {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(135deg) scaleX(-1);
+}
+
+.leaf-corner-image {
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.7)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
+  animation: leafGlow 3s ease-in-out infinite;
+  width: 100px;
+  height: auto;
+}
+
+/* Leaf animations */
+@keyframes leafSway {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(3px) rotate(1deg);
+  }
+
+  75% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+}
+
+@keyframes leafGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.5));
+  }
 }
 
 /* Main content area */
