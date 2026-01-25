@@ -405,6 +405,41 @@ a:hover {
   font-size: 1.2rem;
 }
 
+/* Desktop Navigation Link Styles */
+.nav-link-desktop {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-primitive-light);
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-link-desktop::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold-dust);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link-desktop:hover {
+  color: var(--color-gold-dust);
+  border-bottom: none;
+}
+
+.nav-link-desktop:hover::after {
+  width: 80%;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -418,8 +453,78 @@ a:hover {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .welcome-animate {
   animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Scroll-triggered animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Focus styles */
@@ -428,19 +533,62 @@ a:hover {
   outline-offset: 3px;
 }
 
-/* Responsive adjustments */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
-  .nav-links {
-    gap: 1rem;
+  body {
+    font-size: 1.1rem;
+    padding-top: 64px;
+    /* Account for fixed nav */
   }
 
-  .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 0.8rem;
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
-  .member-placeholder {
-    width: 150px;
-    height: 200px;
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .spa-section {
+    min-height: auto;
+    padding: 3rem 1rem;
+  }
+
+  /* More space before About on mobile */
+  #home {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .content-text {
+    font-size: 1.1rem;
+  }
+
+  /* Stack images on mobile */
+  .flex-col.md\\:flex-row {
+    gap: 2rem;
+  }
+
+  .w-64.h-80 {
+    width: 200px;
+    height: 260px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+  body {
+    padding-top: 80px;
+    /* Account for fixed nav */
+  }
+
+  /* More breathing room before About section */
+  #home {
+    min-height: 100vh;
+    padding-bottom: 6rem;
   }
 }

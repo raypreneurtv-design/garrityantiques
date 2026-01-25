@@ -2,7 +2,8 @@
 
 export default function MedievalBorder() {
     return (
-        <div className="fixed inset-0 pointer-events-none z-50" aria-hidden="true">
+        // Hidden on mobile (md:block), only visible on desktop
+        <div className="hidden md:block fixed inset-0 pointer-events-none z-50" aria-hidden="true">
             {/* Outer Dark Border - Iron Frame */}
             <div className="absolute inset-0 border-[8px] border-[#1a0f0a]" style={{
                 boxShadow: 'inset 0 0 15px rgba(0,0,0,0.8)'

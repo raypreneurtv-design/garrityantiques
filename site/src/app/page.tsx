@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollAnimate from "@/components/ScrollAnimate";
 
 // Reusable Service Card Component (Internal)
 const ServiceCard = ({
