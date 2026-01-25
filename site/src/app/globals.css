@@ -567,16 +567,6 @@ a:hover {
   .content-text {
     font-size: 1.1rem;
   }
-
-  /* Stack images on mobile */
-  .flex-col.md\\:flex-row {
-    gap: 2rem;
-  }
-
-  .w-64.h-80 {
-    width: 200px;
-    height: 260px;
-  }
 }
 
 /* Desktop adjustments */
