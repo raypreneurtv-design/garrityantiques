@@ -107,7 +107,7 @@ export default function StorePage() {
                             {/* Google Maps Embed */}
                             <div className="w-full h-64 mb-4 border border-[var(--color-gold)] border-opacity-30 rounded overflow-hidden">
                                 <iframe
-                                    src="https://maps.google.com/maps?q=Paz+Garrity+Antiques,604+Middlesex+St,Lowell,MA+01851&hl=en&z=16&output=embed"
+                                    src="https://maps.google.com/maps?q=Garrity+Antiques,604+Middlesex+St,Lowell,MA+01851&hl=en&z=16&output=embed"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
