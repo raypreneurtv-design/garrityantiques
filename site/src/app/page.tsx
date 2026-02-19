@@ -20,7 +20,7 @@ export default function HomePage() {
 
       {/* Ornate Divider */}
       <div className="ornate-divider">
-        <span>✦</span>
+        <span>&#10022;</span>
       </div>
 
       {/* Tagline */}
@@ -30,7 +30,7 @@ export default function HomePage() {
 
       {/* Since 1974 */}
       <p className="mt-8 text-lg tracking-widest uppercase">
-        Since 1974
+        ESTABLISHED 1974
       </p>
     </div>
   );

@@ -18,3 +18,6 @@ venv/
 # IDE
 .vscode/
 .idea/
+
+.vercel
+.env*.local

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import GoldBorderFrame from "@/components/GoldBorderFrame";
-import FallingLeaves from "@/components/FallingLeaves";
+import LeafBorders from "@/components/LeafBorders";
 
 export const metadata: Metadata = {
   title: "Paz Garrity Antiques | New England Estate Treasures Since 1974",
@@ -27,8 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen">
         <div className="texture-overlay" aria-hidden="true" />
-        <FallingLeaves />
-        <GoldBorderFrame />
+        <LeafBorders />
         <div className="page-container">
           <Navigation />
           <main className="main-content welcome-animate">

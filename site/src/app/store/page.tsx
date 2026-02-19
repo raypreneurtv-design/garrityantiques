@@ -14,12 +14,7 @@ const StoreSection = ({
     children: React.ReactNode;
     className?: string;
 }) => (
-    <div className={`vintage-card h-full ${className}`}>
-        <div className="card-corner corner-top-left"></div>
-        <div className="card-corner corner-top-right"></div>
-        <div className="card-corner corner-bottom-left"></div>
-        <div className="card-corner corner-bottom-right"></div>
-
+    <div className={`vintage-card ${className}`}>
         <h3 className="text-2xl font-bold mb-6 text-center border-b border-[var(--color-gold)] border-opacity-30 pb-4">
             {title}
         </h3>
@@ -39,31 +34,25 @@ const FeatureIcon = ({ icon, label }: { icon: React.ReactNode, label: string }) 
 export default function StorePage() {
     return (
         <div className="py-8">
-            {/* Heading */}
             <h1 className="section-title">Our Store</h1>
 
-            {/* Ornate Divider - Fleur-de-lis */}
             <div className="ornate-divider">
-                <span className="text-2xl">⚜</span>
+                <span className="text-2xl">&#9884;</span>
             </div>
 
             <div className="max-w-6xl mx-auto px-4">
-
-                {/* Main Split Section */}
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
-
-                    {/* Section 1: Online Store */}
+                    {/* Online Store */}
                     <StoreSection title="Shop Online">
-                        <div className="text-center flex flex-col h-full">
+                        <div className="text-center flex flex-col">
                             <p className="text-lg mb-2 text-[var(--color-gold-light)]">eBay Store</p>
                             <p className="mb-8 font-light leading-relaxed">
                                 Browse our curated selection of antiques, vintage finds, and estate
                                 treasures available for purchase through our eBay store.
                             </p>
 
-                            <div className="flex-grow flex items-center justify-center mb-8 bg-black/20 p-8 rounded border border-[var(--color-gold)] border-opacity-20">
-                                {/* Visual placeholder for eBay store */}
-                                <svg className="w-24 h-24 text-[var(--color-gold)] opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                            <div className="flex-grow flex items-center justify-center mb-10 bg-black/20 p-10 rounded border border-[var(--color-gold)] border-opacity-20">
+                                <svg className="w-32 h-32 text-[var(--color-gold)] opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                                     <path d="M3 3h18v18H3z" />
                                     <path d="M3 9h18" />
                                     <circle cx="8" cy="15" r="2" />
@@ -71,25 +60,24 @@ export default function StorePage() {
                                 </svg>
                             </div>
 
-                            <div className="mt-auto">
-                                <a
-                                    href="#"
-                                    className="btn-gold w-full block py-4 text-xl tracking-widest hover:bg-[var(--color-gold)] hover:text-[var(--color-forest-green)]"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    VISIT OUR EBAY STORE →
-                                </a>
-                                <p className="mt-4 text-sm italic opacity-70">
-                                    New items added regularly
-                                </p>
-                            </div>
+                            <a
+                                href="https://www.ebay.com/usr/hegarrman"
+                                className="btn-gold w-full block py-4 text-xl tracking-widest hover:bg-[var(--color-gold)] hover:text-[var(--color-forest-green)]"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textAlign: 'center', fontSize: '1rem', lineHeight: '1.6' }}
+                            >
+                                VISIT OUR EBAY STORE &rarr;
+                            </a>
+                            <p className="mt-4 text-sm italic opacity-70">
+                                New items added regularly
+                            </p>
                         </div>
                     </StoreSection>
 
-                    {/* Section 2: Physical Store */}
+                    {/* Physical Store */}
                     <StoreSection title="Visit Our Showroom">
-                        <div className="flex flex-col h-full text-center">
+                        <div className="flex flex-col text-center">
                             <div className="mb-6 space-y-1">
                                 <p className="text-xl font-bold">604 Middlesex Street</p>
                                 <p className="text-xl">Lowell, MA 01851</p>
@@ -117,27 +105,30 @@ export default function StorePage() {
                             </p>
 
                             {/* Google Maps Embed */}
-                            <div className="w-full h-48 mb-8 border border-[var(--color-gold)] border-opacity-30 rounded overflow-hidden">
+                            <div className="w-full h-64 mb-4 border border-[var(--color-gold)] border-opacity-30 rounded overflow-hidden">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2937.663162383849!2d-71.3283!3d42.6334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3a46a6f6f6f6f%3A0x6f6f6f6f6f6f6f6f!2s604%20Middlesex%20St%2C%20Lowell%2C%20MA%2001851!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                                    src="https://maps.google.com/maps?q=Paz+Garrity+Antiques,604+Middlesex+St,Lowell,MA+01851&hl=en&z=16&output=embed"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
                                     allowFullScreen
                                     loading="lazy"
+                                    title="Paz Garrity Antiques location"
                                 ></iframe>
                             </div>
 
-                            <div className="mt-auto">
-                                <a href="tel:978-645-7999" className="block text-lg font-bold border-2 border-[var(--color-gold)] p-3 hover:bg-[var(--color-gold)] hover:text-[var(--color-forest-green)] transition-all uppercase">
-                                    Call for Appointment: 978-645-7999
-                                </a>
-                            </div>
+                            <a
+                                href="tel:978-645-7999"
+                                className="btn-gold w-full block py-4 tracking-widest hover:bg-[var(--color-gold)] hover:text-[var(--color-forest-green)]"
+                                style={{ textAlign: 'center', fontSize: '1rem', lineHeight: '1.6' }}
+                            >
+                                Call for Appointment<br />978-645-7999
+                            </a>
                         </div>
                     </StoreSection>
                 </div>
 
-                {/* What to Expect Section */}
+                {/* What to Expect */}
                 <div className="mb-16 text-center">
                     <h2 className="text-2xl font-bold mb-8 flex items-center justify-center gap-4">
                         <span className="h-px w-12 bg-[var(--color-gold)] opacity-50"></span>
@@ -168,12 +159,10 @@ export default function StorePage() {
                         />
                     </div>
                 </div>
-
             </div>
 
-            {/* Footer */}
             <p className="footer-text">
-                Whether shopping online or visiting in person, you'll find quality antiques backed by decades of expertise.
+                Whether shopping online or visiting in person, you&apos;ll find quality antiques backed by decades of expertise.
             </p>
         </div>
     );

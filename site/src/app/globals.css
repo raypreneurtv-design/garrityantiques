@@ -90,7 +90,7 @@ a:hover {
 
 .victorian-frame::before,
 .victorian-frame::after {
-  content: '❧';
+  content: '\2767';
   position: absolute;
   font-size: 1.5rem;
   color: var(--color-gold);
@@ -121,7 +121,7 @@ a:hover {
 }
 
 .corner-flourish::before {
-  content: '✦';
+  content: '\2726';
   font-size: 2rem;
   color: var(--color-gold);
 }
@@ -182,6 +182,8 @@ a:hover {
   font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -199,7 +201,7 @@ a:hover {
   padding: 1rem;
 }
 
-/* Leaf border decorations */
+/* Leaf border decorations - hidden by default, shown after scroll */
 .leaf-border {
   position: fixed;
   top: 0;
@@ -210,62 +212,39 @@ a:hover {
   align-items: center;
   pointer-events: none;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.leaf-border.visible {
+  opacity: 1;
 }
 
 .leaf-strip {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: -20px;
-}
-
-.leaf-border-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  /* Constrain height to avoid blocking clicks below */
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  z-index: 50;
-  pointer-events: none;
-}
-
-.leaf-border-top .leaf-image {
-  /* Rotate -90deg to make the vertical vine horizontal */
-  transform: rotate(-90deg);
-  transform-origin: 0 0;
-  margin: 0;
-  /* Remove vertical margins */
-  width: 40px;
-  /* Layout width - controls density/overlap */
-  height: auto;
-  /* Visual length will be determined by aspect ratio */
+  gap: 0;
 }
 
 .leaf-border-left {
-  left: -10px;
+  left: -6px;
   transform: scaleX(-1);
 }
 
 .leaf-border-right {
-  right: -10px;
+  right: -6px;
 }
 
 .leaf-image {
-  /* Golden brown sepia tint with subtle glow */
-  filter: sepia(40%) saturate(120%) hue-rotate(-5deg) drop-shadow(0 0 8px rgba(180, 140, 50, 0.4));
+  filter: sepia(40%) saturate(120%) hue-rotate(-5deg) drop-shadow(0 0 6px rgba(180, 140, 50, 0.35));
   object-fit: contain;
-  width: 50px;
+  width: 40px;
   height: auto;
-  margin: -30px 0;
+  margin: -28px 0;
 }
 
-/* Subtle animation - very gentle */
+/* Subtle breathing animation */
 .leaf-border-left .leaf-image:nth-child(2) {
   animation: leafBreath 6s ease-in-out infinite;
   animation-delay: -2s;
@@ -276,20 +255,19 @@ a:hover {
   animation-delay: -4s;
 }
 
-/* Gentle breathing animation */
 @keyframes leafBreath {
 
   0%,
   100% {
-    filter: sepia(40%) saturate(120%) hue-rotate(-5deg) drop-shadow(0 0 8px rgba(180, 140, 50, 0.4));
+    filter: sepia(40%) saturate(120%) hue-rotate(-5deg) drop-shadow(0 0 6px rgba(180, 140, 50, 0.35));
   }
 
   50% {
-    filter: sepia(35%) saturate(130%) hue-rotate(-5deg) drop-shadow(0 0 12px rgba(180, 140, 50, 0.5));
+    filter: sepia(35%) saturate(130%) hue-rotate(-5deg) drop-shadow(0 0 10px rgba(180, 140, 50, 0.45));
   }
 }
 
-/* Mobile responsiveness - shrink leaves on small screens instead of hiding */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .leaf-border {
     display: flex !important;
@@ -297,48 +275,33 @@ a:hover {
   }
 
   .leaf-image {
-    width: 25px;
+    width: 28px;
     height: auto;
-    /* Smaller for mobile */
-    margin: -15px 0;
-  }
-
-  .leaf-border-top .leaf-image {
-    width: 25px;
-    /* Tighter density on mobile */
-    transform: rotate(-90deg);
-    transform-origin: 0 0;
-    margin: 0;
-  }
-
-  .leaf-border-top {
-    top: 5px;
-    /* Adjust top offset for mobile */
-    height: 40px;
-    flex-direction: row !important;
-    padding-top: 0;
+    margin: -14px 0;
   }
 
   .leaf-border-left {
-    left: -8px;
+    left: 0;
   }
 
   .leaf-border-right {
-    right: -8px;
+    right: 0;
   }
-}
 
-@media (min-width: 769px) {
-  .leaf-top {
-    width: 50px;
-    margin: 0 -20px;
-    transform: rotate(180deg);
+  .page-container {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .main-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .leaf-image {
-    width: 35px;
+    width: 32px;
   }
 
   .leaf-border-left {
@@ -435,8 +398,17 @@ a:hover {
 }
 
 .services-list li::before {
-  content: '• ';
+  content: '\2022 ';
   color: var(--color-gold);
+}
+
+/* Vintage card */
+.vintage-card {
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid var(--color-gold);
+  border-opacity: 0.3;
+  padding: 3rem;
+  position: relative;
 }
 
 /* Contact info */
@@ -538,25 +510,4 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
-}
-
-/* Falling leaf animation */
-@keyframes falling-leaf {
-  0% {
-    opacity: 0;
-    transform: translateY(0) rotate(0deg) translateX(0);
-  }
-
-  10% {
-    opacity: 0.3;
-  }
-
-  90% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(110vh) rotate(360deg) translateX(20px);
-  }
 }

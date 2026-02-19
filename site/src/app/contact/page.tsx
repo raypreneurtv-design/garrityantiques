@@ -13,7 +13,7 @@ export default function ContactPage() {
 
             {/* Ornate Divider */}
             <div className="ornate-divider">
-                <span>✦</span>
+                <span>&#10022;</span>
             </div>
 
             {/* Contact Info */}
