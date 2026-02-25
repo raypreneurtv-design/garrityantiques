@@ -506,6 +506,217 @@ a:hover {
   opacity: 0;
 }
 
+/* ========================================
+   Sold Out Items Section — Vertical List
+   ======================================== */
+
+.sold-section {
+  padding: 2rem 0 4rem;
+}
+
+.sold-section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  text-align: center;
+  color: var(--color-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.sold-section-subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Vertical list container */
+.sold-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+/* Each sold item row */
+.sold-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+@media (min-width: 640px) {
+  .sold-item {
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+  }
+
+  .sold-item--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Image side */
+.sold-item-image-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 380px;
+  border: 2px solid var(--color-gold);
+  padding: 6px;
+  background: rgba(8, 20, 8, 0.7);
+  box-shadow:
+    inset 0 0 12px rgba(212, 175, 55, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.sold-item-image-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (min-width: 640px) {
+  .sold-item-image-wrap {
+    width: 45%;
+    max-width: 420px;
+  }
+}
+
+.sold-item-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: sepia(12%) saturate(90%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.sold-item:hover .sold-item-image {
+  filter: sepia(0%) saturate(100%);
+  transform: scale(1.02);
+}
+
+/* SOLD badge */
+.sold-item-badge {
+  position: absolute;
+  top: 14px;
+  right: -30px;
+  z-index: 10;
+  background: linear-gradient(135deg, #8b1a1a, #c0392b, #8b1a1a);
+  color: #fdf6e3;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 5px 36px;
+  transform: rotate(45deg);
+  text-align: center;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Text side */
+.sold-item-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .sold-item-body {
+    text-align: left;
+  }
+
+  .sold-item--reverse .sold-item-body {
+    text-align: right;
+  }
+}
+
+.sold-item-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-gold);
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.sold-item-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-cream);
+  opacity: 0.85;
+  line-height: 1.8;
+  border-left: 2px solid rgba(212, 175, 55, 0.35);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .sold-item--reverse .sold-item-desc {
+    border-left: none;
+    border-right: 2px solid rgba(212, 175, 55, 0.35);
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+}
+
+/* Tagline for items without a description */
+.sold-item-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  opacity: 0.55;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+/* Divider between items */
+.sold-item-divider {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-gold);
+  opacity: 0.4;
+  font-size: 1.1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.sold-item-divider::before,
+.sold-item-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(to var(--dir, right), transparent, var(--color-gold));
+}
+
+.sold-item-divider::after {
+  --dir: left;
+}
+
 /* Focus styles */
 :focus-visible {
   outline: 2px solid var(--color-gold);
