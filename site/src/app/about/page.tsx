@@ -65,7 +65,7 @@ export default function AboutPage() {
 
             {/* Footer */}
             <p className="footer-text">
-                Paz Garrity Antiques &bull; Since 1974
+                Paz Garrity Antiques &bull; Established 1974
             </p>
         </div>
     );

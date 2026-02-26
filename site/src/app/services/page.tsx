@@ -59,11 +59,35 @@ export default function ServicesPage() {
                     description="Always seeking quality antiques, vintage collectibles, and estate treasures. We offer fair prices and immediate payment for items from single pieces to entire collections. Contact us for a free evaluation."
                     icon={<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="6" width="20" height="12" rx="2" /><path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" /><path d="M2 10V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" /></svg>}
                 />
-                <ServiceCard
-                    title="Online Sales Through eBay"
-                    description="Browse our curated selection of authenticated antiques and vintage finds. Updated regularly with new estate acquisitions. Each item professionally photographed and accurately described."
-                    icon={<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>}
-                />
+                <div className="vintage-card mb-8">
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                        <div className="shrink-0 text-[var(--color-gold)] opacity-90 p-4 border border-[var(--color-gold)] rounded-full">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>
+                        </div>
+                        <div className="w-full">
+                            <h3 className="text-xl font-bold mb-3 tracking-wide">Online Sales Through eBay</h3>
+                            <p className="text-[var(--color-gold)] opacity-90 leading-relaxed font-light mb-6">
+                                Browse our curated selection of authenticated antiques and vintage finds. Updated regularly with new estate acquisitions. Each item professionally photographed and accurately described.
+                            </p>
+                            <a
+                                href="https://www.ebay.com/usr/hegarrman"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 px-6 py-3 border-2 border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-forest-green)] transition-all duration-300 font-['Cinzel'] tracking-widest text-sm uppercase"
+                            >
+                                <svg width="40" height="18" viewBox="0 0 100 40" fill="none">
+                                    <text x="0" y="30" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="28">
+                                        <tspan fill="#e53238">e</tspan>
+                                        <tspan fill="#0064d2">B</tspan>
+                                        <tspan fill="#f5af02">a</tspan>
+                                        <tspan fill="#86b817">y</tspan>
+                                    </text>
+                                </svg>
+                                View eBay Store &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <p className="footer-text">

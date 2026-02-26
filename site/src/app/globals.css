@@ -722,3 +722,27 @@ a:hover {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
 }
+
+/* ========================================
+   Store Branch Border Styles
+   ======================================== */
+
+.store-branch-card {
+  position: relative;
+  background: transparent;
+  padding: 3rem 2rem;
+  overflow: visible;
+}
+
+/* The SVG border container wraps the card */
+.store-branch-card .branch-border {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.store-branch-card .card-content {
+  position: relative;
+  z-index: 1;
+}
