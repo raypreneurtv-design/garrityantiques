@@ -57,7 +57,7 @@ export default function AboutPage() {
                     </div>
                     <p className="mt-2">
                         The legacy continues through Son, Paz Garrity. With decades of experience already
-                        behind him, Son, Paz Garrity carries on the legacy flowing from one generation
+                        behind him, Paz carries on the legacy flowing from one generation
                         to the next!
                     </p>
                 </div>
