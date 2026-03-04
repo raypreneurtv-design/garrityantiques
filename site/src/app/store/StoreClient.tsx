@@ -247,12 +247,8 @@ export default function StoreClient() {
 
                                 <div className="mb-8 space-y-2 text-sm font-light">
                                     <div className="flex justify-between border-b border-[var(--color-gold)]/20 pb-1">
-                                        <span>Monday - Friday</span>
-                                        <span>10:00 AM - 6:00 PM</span>
-                                    </div>
-                                    <div className="flex justify-between border-b border-[var(--color-gold)]/20 pb-1">
-                                        <span>Saturday</span>
-                                        <span>10:00 AM - 5:00 PM</span>
+                                        <span>Monday - Saturday</span>
+                                        <span>9:00 AM - 4:00 PM</span>
                                     </div>
                                     <div className="flex justify-between opacity-70">
                                         <span>Sunday</span>

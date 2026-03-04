@@ -38,6 +38,46 @@ export default function HomePage() {
         </p>
       </div>
 
+      {/* Store Location & Hours */}
+      <div className="max-w-4xl mx-auto px-4 mt-16 mb-8 text-center pt-8">
+        <h2 className="text-2xl font-bold mb-4 tracking-widest text-[var(--color-gold)]">VISIT OUR SHOWROOM</h2>
+        <p className="mb-10 font-light leading-relaxed text-lg">
+          Feel free to visit us anytime
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+          {/* Map */}
+          <div className="w-full md:w-1/2 h-64 border border-[var(--color-gold)]/30 rounded overflow-hidden shadow-lg shadow-black/50">
+            <iframe
+              src="https://maps.google.com/maps?q=Garrity+Antiques,604+Middlesex+St,Lowell,MA+01851&hl=en&z=16&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              title="Paz Garrity Antiques location"
+            ></iframe>
+          </div>
+
+          {/* Schedule */}
+          <div className="w-full md:w-1/2 max-w-sm space-y-4 text-left p-6 border border-[var(--color-gold)]/20 rounded bg-black/40 shadow-lg shadow-black/50">
+            <h3 className="text-xl font-bold mb-4 text-[var(--color-gold)] border-b border-[var(--color-gold)]/30 pb-2 text-center shadow-sm">Hours of Operation</h3>
+            <div className="flex justify-between border-b border-[var(--color-gold)]/20 pb-3 mt-4 text-sm font-light">
+              <span>Monday - Saturday</span>
+              <span>9:00 AM - 4:00 PM</span>
+            </div>
+            <div className="flex justify-between opacity-70 pt-2 text-sm font-light">
+              <span>Sunday</span>
+              <span>Closed</span>
+            </div>
+            <div className="mt-8 pt-4 border-t border-[var(--color-gold)]/20 text-center">
+              <p className="font-bold text-[var(--color-gold-light)] mb-1">604 Middlesex Street</p>
+              <p className="text-sm font-light">Lowell, MA 01851</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Sold Out Items Showcase */}
       <SoldOutItems />
 
