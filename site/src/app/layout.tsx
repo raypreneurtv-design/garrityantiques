@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import LeafBorders from "@/components/LeafBorders";
+import TopBar from "@/components/TopBar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Paz Garrity Antiques | New England Estate Treasures Since 1974",
@@ -27,11 +29,15 @@ export default function RootLayout({
       <body className="min-h-screen">
         <div className="texture-overlay" aria-hidden="true" />
         <LeafBorders />
-        <div className="page-container">
-          <Navigation />
+        <div className="page-container relative z-10">
+          <div className="sticky top-0 z-50 bg-[var(--color-forest-green)] shadow-lg shadow-black/30">
+            <TopBar />
+            <Navigation />
+          </div>
           <main className="main-content welcome-animate">
             {children}
           </main>
+          <Footer />
         </div>
       </body>
     </html>

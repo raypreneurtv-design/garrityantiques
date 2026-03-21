@@ -326,9 +326,10 @@ a:hover {
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .nav-link {
@@ -340,12 +341,37 @@ a:hover {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-link:hover,
 .nav-link.active {
   border-bottom-color: var(--color-gold);
   color: var(--color-gold-light);
+}
+
+/* Numbered badge on nav tabs */
+.nav-number-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--color-forest-green-dark);
+  background: #1a3a1a;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-gold);
+}
+
+.nav-link:hover .nav-number-badge {
+  background: transparent;
 }
 
 /* Hero section */
@@ -596,10 +622,18 @@ a:hover {
 
 .sold-item-image {
   width: 100%;
-  height: auto;
+  height: 280px;
   display: block;
+  object-fit: cover;
+  object-position: center center;
   filter: sepia(12%) saturate(90%);
   transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+@media (min-width: 640px) {
+  .sold-item-image {
+    height: 320px;
+  }
 }
 
 .sold-item:hover .sold-item-image {

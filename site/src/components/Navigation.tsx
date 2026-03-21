@@ -15,9 +15,9 @@ export default function Navigation() {
     const pathname = usePathname();
 
     return (
-        <nav className="py-4">
+        <nav className="py-1">
             <div className="nav-links">
-                {navLinks.map((link) => (
+                {navLinks.map((link, index) => (
                     <Link
                         key={link.href}
                         href={link.href}
